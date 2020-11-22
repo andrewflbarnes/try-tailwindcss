@@ -1,6 +1,6 @@
 <template>
   <div class="flex pt-10">
-    <div id="app" class="min-h-screen flex flex-col items-center container mx-auto">
+    <div id="app" class="min-h-screen flex flex-col items-center container mx-auto sm:text-lg xl:text-xl">
       <t-t-r />
     </div>
   </div>

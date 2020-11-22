@@ -1,12 +1,12 @@
 <template>
-  <div class="flex justify-between items-center">
+  <div class="flex justify-between items-center overflow-hidden border-2 border-black rounded-full">
     <i
       :class="iconClasses"
-      class="fas text-purple-700">
+      class="w-1/2 h-full flex flex-col justify-center fas text-white bg-black border-r border-black">
     </i>
     <span
       :class="valClasses"
-      class="text-base">
+      class="w-1/2">
       &nbsp;{{ val }}
     </span>
   </div>
@@ -17,7 +17,6 @@ export default {
   name: 'Badge',
   props: {
     type: String,
-    large: Boolean,
     val: [Number, String],
   },
   computed: {
@@ -27,13 +26,14 @@ export default {
         case "score":
           icon = "fa-arrow-alt-circle-up"
           break
+        case "loss":
+          icon = "fa-ban"
+          break
         case "wins":
         default:
           icon = "fa-trophy"
       }
       return {
-        'fa-2x': this.large,
-        'fa-lg': this.large,
         [icon]: true
       }
     },
@@ -46,6 +46,5 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
 </style>
