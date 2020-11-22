@@ -33,7 +33,7 @@ export default {
       }
       return {
         'fa-2x': this.large,
-        'fa-lg': !this.large,
+        'fa-lg': this.large,
         [icon]: true
       }
     },

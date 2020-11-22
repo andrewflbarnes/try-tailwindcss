@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 class="text-5xl text-center font-bold text-purple-700 pb-5">{{ league }}</h1>
-    <ul class="w-full grid grid-cols-1 lg:grid-cols-2">
+    <ul class="w-full grid grid-cols-1 lg:grid-cols-2 sm:gap-x-6">
       <slot></slot>
     </ul>
   </div>
