@@ -5,7 +5,7 @@
   >
     <i
       :class="options.icon"
-      class="w-1/4 h-full flex flex-col justify-center fas text-white border-r-2">
+      class="w-1/4 h-full flex flex-col justify-center fas border-r-2">
     </i>
     <span
       class="w-3/4">
@@ -26,7 +26,7 @@ export default {
   computed: {
     options: function() {
       let icon
-      let iconColor = 'bg-black'
+      let iconColor = 'text-black'
       let containerColor = 'border-black'
 
       switch (this.type) {
