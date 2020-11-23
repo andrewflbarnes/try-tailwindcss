@@ -1,25 +1,34 @@
 <template>
   <div
-    class="relative flex flex-row overflow-hidden items-center"
-    :class="{ 'rounded-lg': !pill, 'rounded-full': pill }"
+    class="relative flex flex-row items-center overflow-hidden"
+    :class="{ 'rounded-lg': !round, 'rounded-full': round }"
   >
-    <div :style="widths.left" class="bg-green-600">&nbsp;</div>
-    <div v-if="blend" :style="widths.blend" class="bg-gradient-to-r from-green-600 to-red-600">&nbsp;</div>
-    <div :style="widths.right" class="bg-red-600">&nbsp;</div>
+    <div :style="widths.left" class="h-6 bg-green-600">&nbsp;</div>
+    <div v-if="blend" :style="widths.blend" class="h-6 bg-gradient-to-r from-green-600 to-red-600">&nbsp;</div>
+    <div :style="widths.right" class="h-6 bg-red-600">&nbsp;</div>
     <div v-if="percent" class="absolute text-white font-bold w-full">{{ widths.percent }}</div>
   </div>
 </template>
 
 <script>
-const blendZone = 5
 export default {
   name: 'SplitBar',
   props: {
-    left: [Number, String],
-    right: [Number, String],
-    percent: Boolean,
-    blend: Boolean,
-    pill: Boolean,
+    left: {           // Relative size of the left part of the bar
+      type: Number,
+      required: true,
+    },
+    right: {          // Relative size of the right part of the bar
+      type: Number,
+      required: true,
+    },
+    blendZone: {      // What absolute percentage of each bar should be blended (if available and blend enabled)
+      type: Number,
+      default: 5,
+    },
+    percent: Boolean, // Display the left side percentage on top of the bar
+    blend: Boolean,   // Blend the colors between the left and right sides
+    round: Boolean,   // Apply full rounding to the ends of the bar
   },
   computed: {
     widths: function() {
@@ -49,6 +58,7 @@ export default {
 
       // Apply adjustments if blending of the left and right colours is enabled based on the size of the "blend zone"
       let blendSize
+      let { blendZone } = this.$props
       if (this.blend) {
         if (leftSize > blendZone && leftSize < (100 - blendZone)) {
           leftSize -= blendZone

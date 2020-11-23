@@ -5,9 +5,19 @@
   >
     <i
       :class="options.icon"
+      @mouseenter="hover = true"
+      @mouseleave="hover = false"
       class="w-1/4 h-full flex flex-col justify-center fas border-r-2">
     </i>
     <span
+      v-if="hover"
+      :class="options.hover"
+      class="w-3/4"
+    >
+      {{ title }}
+    </span>
+    <span
+      v-else
       class="w-3/4">
       {{ val }}
     </span>
@@ -18,12 +28,41 @@
 export default {
   name: 'Badge',
   props: {
-    type: String,
+    type: { // The type of badge (determines the icon)
+      validator: function(value) {
+        return [
+          'score',
+          'loss',
+          'wins',
+        ].indexOf(value) >= 0
+      }
+    },
     val: [Number, String],
     pill: Boolean,
-    color: Boolean
+    color: Boolean,
+    hoverText: {
+      type: Boolean,
+      default: true,
+    }
+  },
+  data: function() {
+    return {
+      hover: false,
+    }
   },
   computed: {
+    title: function() {
+      switch (this.type) {
+        case "score":
+          return "High"
+        case "loss":
+          return "Lost"
+        case "wins":
+        default:
+          return "Won"
+
+      }
+    },
     options: function() {
       let icon
       let iconColor = 'text-black'
@@ -55,6 +94,7 @@ export default {
 
       return {
         icon: [ icon, iconColor, containerColor ],
+        hover: [ iconColor ],
         container: [ containerColor, {
           "rounded-full": this.pill,
           "rounded-lg": !this.pill,

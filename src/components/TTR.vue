@@ -1,18 +1,30 @@
 <template>
   <div class="w-full">
     <div class="text-center font-bold mb-5">
-      <span class="bg-white border-2 border-black text-5xl text-center font-bold px-5 rounded-lg">Ticket To Ride</span>
+      <span
+        class="bg-white border-2 border-black text-5xl text-center font-bold px-5"
+        :class="{
+          'rounded-full': round,
+          'rounded-lg': !round,
+          'shadow-xl': pop,
+        }"
+      >
+        Ticket To Ride
+      </span>
     </div>
     <standings league="Ticket To Ride">
       <standings-item v-for="s in standings"
         :key="s.name"
         :name="s.name"
+        :discord="s.discord"
         :high="s.high"
         :wins="s.wins"
         :losses="s.losses"
         :imgUrl="s.imgUrl"
-        round
-        color
+        :color="color"
+        :round="round"
+        :progress="progress"
+        :pop="pop"
       />
     </standings>
   </div>
@@ -26,6 +38,12 @@ export default {
   components: {
     Standings,
     StandingsItem,
+  },
+  props: {
+    color: Boolean,     // Enables color - b/w by default
+    round: Boolean,     // Enables "full" rounding of elements - by default there is just slight rounding
+    progress: Boolean,  // Add a colored bar representing the win/loss ratio
+    pop: Boolean,       // Enables depth effects like shadows
   },
   data: function() {
     return {
