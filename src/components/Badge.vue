@@ -5,7 +5,7 @@
   >
     <i
       :class="options.icon"
-      class="w-1/4 h-full flex flex-col justify-center fas text-white border-r">
+      class="w-1/4 h-full flex flex-col justify-center fas text-white border-r-2">
     </i>
     <span
       class="w-3/4">
@@ -33,14 +33,14 @@ export default {
         case "score":
           icon = "fa-arrow-alt-circle-up"
           if (this.color) {
-            iconColor = 'bg-yellow-600'
+            iconColor = 'text-yellow-600'
             containerColor = 'border-yellow-600'
           }
           break
         case "loss":
           icon = "fa-ban"
           if (this.color) {
-            iconColor = 'bg-red-600'
+            iconColor = 'text-red-600'
             containerColor = 'border-red-600'
           }
           break
@@ -48,17 +48,17 @@ export default {
         default:
           icon = "fa-trophy"
           if (this.color) {
-            iconColor = 'bg-green-600'
+            iconColor = 'text-green-600'
             containerColor = 'border-green-600'
           }
       }
+
       return {
-        icon: [ icon, iconColor ],
-        container: {
-          [containerColor]: true,
-          'rounded-full': this.pill,
-          'rounded-lg': !this.pill,
-        }
+        icon: [ icon, iconColor, containerColor ],
+        container: [ containerColor, {
+          "rounded-full": this.pill,
+          "rounded-lg": !this.pill,
+        }],
       }
     },
   }

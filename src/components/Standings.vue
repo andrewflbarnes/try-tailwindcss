@@ -1,6 +1,6 @@
 <template functional>
   <div>
-    <ul class="w-full grid grid-cols-1">
+    <ul class="w-full grid grid-cols-1 xl:grid-cols-2">
       <slot></slot>
     </ul>
   </div>

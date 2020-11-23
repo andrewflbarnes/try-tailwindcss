@@ -9,7 +9,7 @@
         class="col-span-3 w-full text-center justify-between flex flex-col px-6 sm:col-span-5 lg:col-span-8"
         :class="{ 'sm:justify-around': !progress }"
       >
-        <div class="text-left text-base sm:text-2xl lg:text-4xl whitespace-no-wrap overflow-y-scroll">
+        <div class="text-left text-base sm:text-4xl whitespace-nowrap font-bold overflow-y-scroll">
           {{ name }}
         </div>
         <div class="w-full flex flex-row flex-wrap justify-between sm:justify-between">
