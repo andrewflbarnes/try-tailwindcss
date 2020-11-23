@@ -10,10 +10,31 @@
           style="z-index: -1">
       </div>
     </div>
+
     <!-- content -->
-    <div style="margin-top: -2em" class="min-h-screen flex flex-col items-center container mx-auto text-base sm:text-lg xl:text-xl">
+    <div style="margin-top: -1em" class="flex flex-col items-center container mx-auto mb-10 text-base sm:text-lg xl:text-xl">
       <t-t-r />
     </div>
+
+    <!-- footer (move this) -->
+    <footer class="fixed bottom-0 w-full h-10 flex justify-center items-center text-black bg-gray-200">
+      <div class="container flex justify-around">
+        <div>
+          <a href="https://github.com/andrewflbarnes">
+            <i class="fab fa-github"></i>
+            &nbsp;
+            andrewflbarnes
+          </a>
+        </div>
+        <div>
+          <a href="https://github.com/andrewflbarnes/try-tailwindcss">
+            <i class="fab fa-github"></i>
+            &nbsp;
+            Source
+          </a>
+        </div>
+      </div>
+    </footer>
   </div>
 </template>
 
