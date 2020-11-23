@@ -1,13 +1,15 @@
 <template>
-  <div class="flex justify-between items-center overflow-hidden border-2 border-black rounded-full">
+  <div
+    class="flex justify-between items-center overflow-hidden border-2"
+    :class="options.container"
+  >
     <i
-      :class="iconClasses"
-      class="w-1/2 h-full flex flex-col justify-center fas text-white bg-black border-r border-black">
+      :class="options.icon"
+      class="w-1/4 h-full flex flex-col justify-center fas text-white border-r">
     </i>
     <span
-      :class="valClasses"
-      class="w-1/2">
-      &nbsp;{{ val }}
+      class="w-3/4">
+      {{ val }}
     </span>
   </div>
 </template>
@@ -18,30 +20,47 @@ export default {
   props: {
     type: String,
     val: [Number, String],
+    pill: Boolean,
+    color: Boolean
   },
   computed: {
-    iconClasses: function() {
-      let icon;
+    options: function() {
+      let icon
+      let iconColor = 'bg-black'
+      let containerColor = 'border-black'
+
       switch (this.type) {
         case "score":
           icon = "fa-arrow-alt-circle-up"
+          if (this.color) {
+            iconColor = 'bg-yellow-600'
+            containerColor = 'border-yellow-600'
+          }
           break
         case "loss":
           icon = "fa-ban"
+          if (this.color) {
+            iconColor = 'bg-red-600'
+            containerColor = 'border-red-600'
+          }
           break
         case "wins":
         default:
           icon = "fa-trophy"
+          if (this.color) {
+            iconColor = 'bg-green-600'
+            containerColor = 'border-green-600'
+          }
       }
       return {
-        [icon]: true
+        icon: [ icon, iconColor ],
+        container: {
+          [containerColor]: true,
+          'rounded-full': this.pill,
+          'rounded-lg': !this.pill,
+        }
       }
     },
-    valClasses: function() {
-      return {
-        'text-2xl': this.large,
-      }
-    }
   }
 }
 </script>

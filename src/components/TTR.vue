@@ -1,5 +1,8 @@
 <template>
   <div class="w-full">
+    <div class="text-center font-bold mb-5">
+      <span class="bg-white border-2 border-black text-5xl text-center font-bold px-5 rounded-lg">Ticket To Ride</span>
+    </div>
     <standings league="Ticket To Ride">
       <standings-item v-for="s in standings"
         :key="s.name"
@@ -8,6 +11,8 @@
         :wins="s.wins"
         :losses="s.losses"
         :imgUrl="s.imgUrl"
+        round
+        color
       />
     </standings>
   </div>

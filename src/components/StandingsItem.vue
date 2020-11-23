@@ -1,28 +1,32 @@
 <template>
   <div class="m-2">
-    <div class="grid grid-cols-4 rounded-lg border-black border-2 sm:grid-cols-6 lg:grid-cols-9">
+    <div class="grid grid-cols-4 items-center rounded-lg sm:grid-cols-6 lg:grid-cols-9">
       <profile-pic
         :imgUrl="imgUrl"
-        class="border-r-2 border-black"
-        cap
+        :round="round"
       />
-      <div class="col-span-3 w-full text-center flex flex-col sm:col-span-5 lg:col-span-8">
-        <div class="bg-black text-white">{{ name }}</div>
-        <div class="h-full w-full flex flex-row flex-wrap justify-around">
-          <div class="flex flex-col justify-center w-2/5 sm:w-1/4">
-            <badge :val="wins" type="wins" />
+      <div
+        class="col-span-3 w-full text-center justify-between flex flex-col px-6 sm:col-span-5 lg:col-span-8"
+        :class="{ 'sm:justify-around': !progress }"
+      >
+        <div class="text-left text-base sm:text-2xl lg:text-4xl whitespace-no-wrap overflow-y-scroll">
+          {{ name }}
+        </div>
+        <div class="w-full flex flex-row flex-wrap justify-between sm:justify-between">
+          <div class="flex flex-col justify-center w-2/5 sm:w-1/4 mb-1">
+            <badge :val="wins" type="wins" :pill="round" :color="color"/>
           </div>
-          <div class="flex flex-col justify-center w-2/5 sm:w-1/4">
-            <badge :val="high" type="score" />
+          <div class="flex flex-col justify-center w-2/5 sm:w-1/4 mb-1">
+            <badge :val="high" type="score" :pill="round" :color="color"/>
           </div>
-          <div class="flex flex-col justify-center w-2/5 sm:w-1/4">
-            <badge :val="losses" type="loss" />
+          <div class="flex flex-col justify-center w-2/5 sm:w-1/4 mb-1">
+            <badge :val="losses" type="loss" :pill="round" :color="color"/>
           </div>
           <div class="flex flex-col justify-center w-2/5 sm:hidden">
             &nbsp;
           </div>
         </div>
-        <split-bar :left="wins" :right="losses" percent />
+        <split-bar v-if="progress" :left="wins" :right="losses" percent blend :pill="round"/>
       </div>
     </div>
   </div>
@@ -41,7 +45,10 @@ export default {
     losses: Number,
     high: Number,
     imgUrl: String,
-  }
+    round: Boolean,
+    progress: Boolean,
+    color: Boolean,
+  },
 }
 </script>
 
