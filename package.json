@@ -25,15 +25,17 @@
   },
   "homepage": "https://github.com/andrewflbarnes/try-tailwindcss#readme",
   "dependencies": {
-    "core-js": "^2.6.5",
-    "tailwindcss": "^1.0.3",
+    "autoprefixer": "^9.8.6",
+    "core-js": "^3.7.0",
+    "postcss": "^7.0.35",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.1",
     "vue": "^2.6.10",
     "vue-router": "^3.4.9"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.0.1",
-    "@vue/cli-plugin-eslint": "^3.0.1",
-    "@vue/cli-service": "^3.0.1",
+    "@vue/cli-plugin-babel": "^4.5.9",
+    "@vue/cli-plugin-eslint": "^4.5.9",
+    "@vue/cli-service": "^4.5.9",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
