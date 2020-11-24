@@ -16,7 +16,6 @@
       <standings-item v-for="s in standings"
         :key="s.name"
         :name="s.name"
-        :discord="s.discord"
         :high="s.high"
         :wins="s.wins"
         :losses="s.losses"

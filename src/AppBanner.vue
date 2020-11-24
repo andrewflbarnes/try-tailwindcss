@@ -1,6 +1,6 @@
 <template>
   <div class="relative">
-    <div class="w-full" style="padding-top: 15rem">
+    <div class="w-full pt-60">
       <img
         :src="src"
         alt="Missing banner image"
