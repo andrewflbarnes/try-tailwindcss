@@ -26,6 +26,7 @@
   "homepage": "https://github.com/andrewflbarnes/try-tailwindcss#readme",
   "dependencies": {
     "autoprefixer": "^9.8.6",
+    "axios": "^0.21.0",
     "core-js": "^3.7.0",
     "postcss": "^7.0.35",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.1",
