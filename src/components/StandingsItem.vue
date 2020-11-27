@@ -14,7 +14,7 @@
   >
     <div class="flex flex-row items-center rounded-lg">
       <profile-pic
-        :imgUrl="imgUrl"
+        :imgUrl="img"
         :round="round"
         border
       />
@@ -58,15 +58,17 @@ export default {
     wins: Number,       // The user's wins
     losses: Number,     // The user's losses
     high: Number,       // The user's high score
-    imgUrl: {           // The URL containing the profile picture
-      type: String,
-      default: "https://i.pinimg.com/originals/21/49/9d/21499dba0eec71730fdaa0534a82e163.jpg"
-    },
+    imgUrl: String,     // The URL containing the profile picture
     round: Boolean,     // By default there is slight rounding on all elements, enabling gives 'full' circular rounding to all elements
     progress: Boolean,  // Add a colored bar indicating the win/loss ratio - see split-bar for options
     color: Boolean,     // Adds colors to badges
     pop: Boolean,       // Applies depths effects (shadows, etc.)
   },
+  computed: {
+    img() {
+      return this.imgUrl || "https://i.pinimg.com/originals/21/49/9d/21499dba0eec71730fdaa0534a82e163.jpg"
+    }
+  }
 }
 </script>
 
