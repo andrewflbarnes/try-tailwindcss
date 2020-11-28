@@ -12,6 +12,10 @@
         Ticket To Ride
       </span>
     </div>
+    <div class="text-center">
+      <div v-show="loading">Loading...</div>
+      <div v-show="error">Unable to load data, please try again later</div>
+    </div>
     <standings league="Ticket To Ride">
       <standings-item v-for="s in standings"
         :key="s.name"
@@ -46,7 +50,9 @@ export default {
   },
   data() {
     return {
-      standings: []
+      standings: [],
+      loading: true,
+      error: false,
     }
   },
   mounted() {
@@ -54,6 +60,11 @@ export default {
       .get(process.env.VUE_APP_API + "/users")
       .then(response => {
         this.standings = response.data
+        this.loading = false
+      })
+      .catch(() => {
+        this.loading = false
+        this.error = true
       })
   }
 }
