@@ -17,8 +17,7 @@
       <div v-show="error">Unable to load data, please try again later</div>
     </div>
     <standings league="Ticket To Ride">
-      <standings-item v-for="s in standings"
-        :key="s.name"
+      <standings-item v-for="s in standings" :key="s.name"
         :name="s.name"
         :high="s.high"
         :wins="s.wins"
@@ -34,6 +33,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import Standings from './Standings.vue'
 import StandingsItem from './StandingsItem.vue'
 export default {
@@ -56,8 +56,8 @@ export default {
     }
   },
   mounted() {
-    this.axios
-      .get(process.env.VUE_APP_API + "/users")
+    axios
+      .get(import.meta.env.SNOWPACK_PUBLIC_API + "/users")
       .then(response => {
         this.standings = response.data
         this.loading = false
