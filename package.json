@@ -3,11 +3,8 @@
   "version": "1.0.0",
   "description": "Have a crack at tailwindcss",
   "scripts": {
-    "snow": "snowpack dev",
-    "snowb": "snowpack build",
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "serve": "snowpack dev",
+    "build": "snowpack build"
   },
   "repository": {
     "type": "git",
