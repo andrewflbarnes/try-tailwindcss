@@ -1,4 +1,4 @@
-<template functional>
+<template>
   <div>
     <ul class="w-full grid grid-cols-1 xl:grid-cols-2">
       <slot></slot>

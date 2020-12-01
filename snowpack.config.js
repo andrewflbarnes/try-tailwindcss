@@ -13,6 +13,11 @@ module.exports = {
       'input': '.css',
       'output': '.css',
     }],
+    ["@snowpack/plugin-run-script", {
+      "cmd": "eslint \"src/**/*.{js,jsx,ts,tsx,vue}\"",
+      // Optional: Use npm package "watch" to run on every file change
+      // "watch": "watch \"$1\" src"
+    }],
     '@snowpack/plugin-webpack'
   ],
   install: [
