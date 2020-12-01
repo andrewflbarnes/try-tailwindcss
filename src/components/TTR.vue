@@ -13,16 +13,22 @@
       </span>
     </div>
     <div class="text-center">
-      <div v-show="loading">Loading...</div>
-      <div v-show="error">Unable to load data, please try again later</div>
+      <div v-show="loading">
+        Loading...
+      </div>
+      <div v-show="error">
+        Unable to load data, please try again later
+      </div>
     </div>
     <standings league="Ticket To Ride">
-      <standings-item v-for="s in standings" :key="s.name"
+      <standings-item
+        v-for="s in standings"
+        :key="s.name"
         :name="s.name"
         :high="s.high"
         :wins="s.wins"
         :losses="s.losses"
-        :imgUrl="s.picture"
+        :img-url="s.picture"
         :color="color"
         :round="round"
         :progress="progress"

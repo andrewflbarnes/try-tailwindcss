@@ -1,17 +1,21 @@
 <template>
-  <div class="relative" :class="size">
+  <div
+    class="relative"
+    :class="size"
+  >
     <div :class="size">
       <img
         :src="imgUrl"
         alt="missing profile picture"
         class="absolute inset-0 object-cover object-top w-full h-full"
-        :class='{
-          "rounded-full": round,
-          "rounded-lg": !round,
-          "rounded-r-none": cap,
-          "border-black": border,
-          "border-2": border,
-        }'>
+        :class="{
+          &quot;rounded-full&quot;: round,
+          &quot;rounded-lg&quot;: !round,
+          &quot;rounded-r-none&quot;: cap,
+          &quot;border-black&quot;: border,
+          &quot;border-2&quot;: border,
+        }"
+      >
     </div>
   </div>
 </template>

@@ -5,14 +5,14 @@
     <div class="container flex justify-around">
       <div>
         <a href="https://github.com/andrewflbarnes">
-          <i class="fab fa-github"></i>
+          <i class="fab fa-github" />
           &nbsp;
           <span>andrewflbarnes</span>
         </a>
       </div>
       <div>
         <a href="https://github.com/andrewflbarnes/try-tailwindcss">
-          <i class="fab fa-github"></i>
+          <i class="fab fa-github" />
           &nbsp;
           <span>Source</span>
         </a>

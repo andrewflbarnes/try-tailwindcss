@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "snowpack dev",
     "build": "snowpack build",
-    "lint": "eslint \"**/*.{vue,js}\""
+    "lint": "eslint \"**/*.{vue,js}\"",
+    "lint:fix": "eslint \"**/*.{vue,js}\" --fix"
   },
   "repository": {
     "type": "git",

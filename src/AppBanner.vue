@@ -4,7 +4,8 @@
       <img
         :src="src"
         alt="Missing banner image"
-        class="absolute inset-0 object-cover w-full h-full border-b-2 border-black">
+        class="absolute inset-0 object-cover w-full h-full border-b-2 border-black"
+      >
     </div>
   </div>
 </template>

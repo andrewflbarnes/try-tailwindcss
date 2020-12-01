@@ -5,10 +5,10 @@
   >
     <i
       :class="options.icon"
+      class="w-1/4 h-full flex flex-col justify-center fas border-r-2"
       @mouseenter="hover = true"
       @mouseleave="hover = false"
-      class="w-1/4 h-full flex flex-col justify-center fas border-r-2">
-    </i>
+    />
     <span
       v-if="hover"
       :class="options.hover"
@@ -18,7 +18,8 @@
     </span>
     <span
       v-else
-      class="w-3/4">
+      class="w-3/4"
+    >
       {{ val }}
     </span>
   </div>

@@ -14,7 +14,7 @@
   >
     <div class="flex flex-row items-center rounded-lg">
       <profile-pic
-        :imgUrl="img"
+        :img-url="img"
         :round="round"
         border
       />
@@ -24,22 +24,45 @@
           'sm:justify-around': !progress
         }"
       >
-        <name-info :name="name"/>
+        <name-info :name="name" />
         <div class="w-full flex flex-row flex-wrap justify-between sm:justify-between">
           <div class="flex flex-col justify-center w-2/5 sm:w-1/4 mb-1">
-            <badge :val="wins" type="wins" :pill="round" :color="color"/>
+            <badge
+              :val="wins"
+              type="wins"
+              :pill="round"
+              :color="color"
+            />
           </div>
           <div class="flex flex-col justify-center w-2/5 sm:w-1/4 mb-1">
-            <badge :val="high" type="score" :pill="round" :color="color"/>
+            <badge
+              :val="high"
+              type="score"
+              :pill="round"
+              :color="color"
+            />
           </div>
           <div class="flex flex-col justify-center w-2/5 sm:w-1/4 mb-1">
-            <badge :val="losses" type="loss" :pill="round" :color="color"/>
+            <badge
+              :val="losses"
+              type="loss"
+              :pill="round"
+              :color="color"
+            />
           </div>
           <div class="flex flex-col justify-center w-2/5 sm:hidden">
             &nbsp;
           </div>
         </div>
-        <split-bar v-if="progress" class="w-full" :left="wins" :right="losses" percent blend :round="round"/>
+        <split-bar
+          v-if="progress"
+          class="w-full"
+          :left="wins"
+          :right="losses"
+          percent
+          blend
+          :round="round"
+        />
       </div>
     </div>
   </div>
@@ -52,10 +75,10 @@ import ProfilePic from './ProfilePic.vue'
 import SplitBar from './SplitBar.vue'
 
 export default {
+  name: 'StandingsItem',
   components: {
     Badge, ProfilePic, SplitBar, NameInfo,
   },
-  name: 'StandingsItem',
   props: {
     name: String,       // The user's name
     wins: Number,       // The user's wins

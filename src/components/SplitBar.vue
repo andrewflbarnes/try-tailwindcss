@@ -3,10 +3,31 @@
     class="relative flex flex-row items-center overflow-hidden"
     :class="{ 'rounded-lg': !round, 'rounded-full': round }"
   >
-    <div :style="widths.left" class="h-6 bg-green-600">&nbsp;</div>
-    <div v-if="blend" :style="widths.blend" class="h-6 bg-gradient-to-r from-green-600 to-red-600">&nbsp;</div>
-    <div :style="widths.right" class="h-6 bg-red-600">&nbsp;</div>
-    <div v-if="percent" class="absolute text-white font-bold w-full">{{ widths.percent }}</div>
+    <div
+      :style="widths.left"
+      class="h-6 bg-green-600"
+    >
+&nbsp;
+    </div>
+    <div
+      v-if="blend"
+      :style="widths.blend"
+      class="h-6 bg-gradient-to-r from-green-600 to-red-600"
+    >
+&nbsp;
+    </div>
+    <div
+      :style="widths.right"
+      class="h-6 bg-red-600"
+    >
+&nbsp;
+    </div>
+    <div
+      v-if="percent"
+      class="absolute text-white font-bold w-full"
+    >
+      {{ widths.percent }}
+    </div>
   </div>
 </template>
 
