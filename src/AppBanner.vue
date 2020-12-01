@@ -16,7 +16,7 @@ export default {
     src: {  // The URL of the image to use as the banner
       type: String,
       required: true,
-    }
-  }
+    },
+  },
 }
 </script>

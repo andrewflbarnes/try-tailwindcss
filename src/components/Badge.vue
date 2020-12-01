@@ -29,13 +29,13 @@ export default {
   name: 'Badge',
   props: {
     type: { // The type of badge (determines the icon)
-      validator: function(value) {
+      validator(value) {
         return [
           'score',
           'loss',
           'wins',
         ].indexOf(value) >= 0
-      }
+      },
     },
     val: [Number, String],
     pill: Boolean,
@@ -43,49 +43,48 @@ export default {
     hoverText: {
       type: Boolean,
       default: true,
-    }
+    },
   },
-  data: function() {
+  data() {
     return {
       hover: false,
     }
   },
   computed: {
-    title: function() {
+    title() {
       switch (this.type) {
-        case "score":
-          return "High"
-        case "loss":
-          return "Lost"
-        case "wins":
+        case 'score':
+          return 'High'
+        case 'loss':
+          return 'Lost'
+        case 'wins':
         default:
-          return "Won"
-
+          return 'Won'
       }
     },
-    options: function() {
+    options() {
       let icon
       let iconColor = 'text-black'
       let containerColor = 'border-black'
 
       switch (this.type) {
-        case "score":
-          icon = "fa-arrow-alt-circle-up"
+        case 'score':
+          icon = 'fa-arrow-alt-circle-up'
           if (this.color) {
             iconColor = 'text-yellow-600'
             containerColor = 'border-yellow-600'
           }
           break
-        case "loss":
-          icon = "fa-ban"
+        case 'loss':
+          icon = 'fa-ban'
           if (this.color) {
             iconColor = 'text-red-600'
             containerColor = 'border-red-600'
           }
           break
-        case "wins":
+        case 'wins':
         default:
-          icon = "fa-trophy"
+          icon = 'fa-trophy'
           if (this.color) {
             iconColor = 'text-green-600'
             containerColor = 'border-green-600'
@@ -93,15 +92,15 @@ export default {
       }
 
       return {
-        icon: [ icon, iconColor, containerColor ],
-        hover: [ iconColor ],
-        container: [ containerColor, {
-          "rounded-full": this.pill,
-          "rounded-lg": !this.pill,
+        icon: [icon, iconColor, containerColor],
+        hover: [iconColor],
+        container: [containerColor, {
+          'rounded-full': this.pill,
+          'rounded-lg': !this.pill,
         }],
       }
     },
-  }
+  },
 }
 </script>
 

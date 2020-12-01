@@ -50,8 +50,11 @@ import Badge from './Badge.vue'
 import NameInfo from './NameInfo.vue'
 import ProfilePic from './ProfilePic.vue'
 import SplitBar from './SplitBar.vue'
+
 export default {
-  components: { Badge, ProfilePic, SplitBar, NameInfo },
+  components: {
+    Badge, ProfilePic, SplitBar, NameInfo,
+  },
   name: 'StandingsItem',
   props: {
     name: String,       // The user's name
@@ -66,9 +69,9 @@ export default {
   },
   computed: {
     img() {
-      return this.imgUrl || "https://i.pinimg.com/originals/21/49/9d/21499dba0eec71730fdaa0534a82e163.jpg"
-    }
-  }
+      return this.imgUrl || 'https://i.pinimg.com/originals/21/49/9d/21499dba0eec71730fdaa0534a82e163.jpg'
+    },
+  },
 }
 </script>
 

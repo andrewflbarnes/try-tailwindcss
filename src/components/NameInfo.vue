@@ -6,12 +6,12 @@
 
 <script>
 export default {
-  name: "NameInfo",
+  name: 'NameInfo',
   props: {
     name: { // The name of the user
       type: String,
       required: true,
     },
   },
-};
+}
 </script>

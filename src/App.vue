@@ -20,6 +20,7 @@
 import AppBanner from './AppBanner.vue'
 import AppFooter from './AppFooter.vue'
 import TTR from './components/TTR.vue'
+
 export default {
   components: { TTR, AppFooter, AppBanner },
   name: 'app',

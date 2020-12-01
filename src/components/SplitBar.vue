@@ -31,7 +31,7 @@ export default {
     round: Boolean,   // Apply full rounding to the ends of the bar
   },
   computed: {
-    widths: function() {
+    widths() {
       let leftSize
       let rightSize
       let percent
@@ -50,7 +50,7 @@ export default {
         rightSize = 100
         percent = 0
       } else {
-        let total = this.left + this.right
+        const total = this.left + this.right
         leftSize = 100 * this.left / total
         rightSize = 100 * this.right / total
         percent = leftSize
@@ -58,7 +58,7 @@ export default {
 
       // Apply adjustments if blending of the left and right colours is enabled based on the size of the "blend zone"
       let blendSize
-      let { blendZone } = this.$props
+      const { blendZone } = this.$props
       if (this.blend) {
         if (leftSize > blendZone && leftSize < (100 - blendZone)) {
           leftSize -= blendZone
@@ -80,18 +80,18 @@ export default {
 
       return {
         left: {
-          width: leftSize + "%",
+          width: `${leftSize}%`,
         },
         right: {
-          width: rightSize + "%",
+          width: `${rightSize}%`,
         },
         blend: {
-          width: blendSize + "%",
+          width: `${blendSize}%`,
         },
-        percent: percent >= 0 ? percent.toFixed(2) + "%" : "Unknown"
+        percent: percent >= 0 ? `${percent.toFixed(2)}%` : 'Unknown',
       }
-    }
-  }
+    },
+  },
 }
 </script>
 

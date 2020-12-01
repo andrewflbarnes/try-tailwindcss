@@ -28,16 +28,15 @@ export default {
     large: Boolean,   // The profile picture is large regardless of breakpoint (if neither small/large enabled the picture scales from small to large at the lg breakpoint)
   },
   computed: {
-    size: function() {
+    size() {
       if (this.small) {
-        return [ "w-24", "h-24" ]
-      } else if (this.large) {
-        return [ "w-24", "h-24" ]
-      } else {
-        return [ "w-24", "h-24", "lg:w-36", "lg:h-36" ]
+        return ['w-24', 'h-24']
+      } if (this.large) {
+        return ['w-24', 'h-24']
       }
-    }
-  }
+      return ['w-24', 'h-24', 'lg:w-36', 'lg:h-36']
+    },
+  },
 }
 </script>
 

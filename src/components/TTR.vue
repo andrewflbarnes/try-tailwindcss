@@ -36,6 +36,7 @@
 import axios from 'axios'
 import Standings from './Standings.vue'
 import StandingsItem from './StandingsItem.vue'
+
 export default {
   name: 'TTR',
   components: {
@@ -57,8 +58,8 @@ export default {
   },
   mounted() {
     axios
-      .get(import.meta.env.SNOWPACK_PUBLIC_API + "/users")
-      .then(response => {
+      .get(`${import.meta.env.SNOWPACK_PUBLIC_API}/users`)
+      .then((response) => {
         this.standings = response.data
         this.loading = false
       })
@@ -66,6 +67,6 @@ export default {
         this.loading = false
         this.error = true
       })
-  }
+  },
 }
 </script>
