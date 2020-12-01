@@ -37,8 +37,12 @@ export default {
           'wins',
         ].indexOf(value) >= 0
       },
+      default: 'wins',
     },
-    val: [Number, String],
+    val: {
+      type: [Number, String],
+      default: '-',
+    },
     pill: Boolean,
     color: Boolean,
     hoverText: {

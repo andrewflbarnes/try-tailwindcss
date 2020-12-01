@@ -9,11 +9,11 @@
         alt="missing profile picture"
         class="absolute inset-0 object-cover object-top w-full h-full"
         :class="{
-          &quot;rounded-full&quot;: round,
-          &quot;rounded-lg&quot;: !round,
-          &quot;rounded-r-none&quot;: cap,
-          &quot;border-black&quot;: border,
-          &quot;border-2&quot;: border,
+          'rounded-full': round,
+          'rounded-lg': !round,
+          'rounded-r-none': cap,
+          'border-black': border,
+          'border-2': border,
         }"
       >
     </div>
@@ -24,7 +24,10 @@
 export default {
   name: 'ProfilePic',
   props: {
-    imgUrl: String,   // The URL to retrieve the profile picture from
+    imgUrl: {         // The URL to retrieve the profile picture from
+      type: String,
+      default: 'https://i.pinimg.com/originals/21/49/9d/21499dba0eec71730fdaa0534a82e163.jpg',
+    },
     round: Boolean,   // The profile picture will be displayed as a circle - by default there is just slight rounding to corners
     border: Boolean,  // Adds a border to the picture
     cap: Boolean,     // Treat the picture as a left side cap - no rounding will be applied to the right side
