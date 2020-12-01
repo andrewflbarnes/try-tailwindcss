@@ -9,16 +9,16 @@ module.exports = {
     '@snowpack/plugin-dotenv',
     '@snowpack/plugin-babel',
     ['@snowpack/plugin-postcss', {
-      'cmd': 'postcss',
-      'input': '.css',
-      'output': '.css',
+      cmd: 'postcss',
+      input: '.css',
+      output: '.css',
     }],
-    ["@snowpack/plugin-run-script", {
-      "cmd": "eslint \"src/**/*.{js,jsx,ts,tsx,vue}\"",
+    ['@snowpack/plugin-run-script', {
+      cmd: 'eslint "src/**/*.{js,jsx,ts,tsx,vue}"',
       // Optional: Use npm package "watch" to run on every file change
       // "watch": "watch \"$1\" src"
     }],
-    '@snowpack/plugin-webpack'
+    '@snowpack/plugin-webpack',
   ],
   install: [
     /* ... */
@@ -30,7 +30,7 @@ module.exports = {
     /* ... */
   },
   buildOptions: {
-    'baseUrl': './'
+    baseUrl: './',
   },
   proxy: {
     /* ... */
@@ -38,4 +38,4 @@ module.exports = {
   alias: {
     /* ... */
   },
-};
+}
