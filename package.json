@@ -4,7 +4,8 @@
   "description": "Have a crack at tailwindcss",
   "scripts": {
     "serve": "snowpack dev",
-    "build": "snowpack build"
+    "build": "snowpack build",
+    "lint": "eslint \"**/*.{vue,js}\""
   },
   "repository": {
     "type": "git",
