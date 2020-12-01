@@ -18,5 +18,6 @@ module.exports = {
     semi: ['error', 'never'],
     'no-multi-spaces': ['error', { ignoreEOLComments: true }],
     'no-mixed-operators': 'off',
+    'max-len': 'off',
   },
 }
