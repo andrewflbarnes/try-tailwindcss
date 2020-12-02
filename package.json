@@ -1,7 +1,7 @@
 {
-  "name": "try-tailwindcss",
+  "name": "ttrl-ui",
   "version": "1.0.0",
-  "description": "Have a crack at tailwindcss",
+  "description": "UI for TTRL",
   "scripts": {
     "serve": "snowpack dev",
     "build": "snowpack build",
@@ -10,21 +10,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/andrewflbarnes/try-tailwindcss.git"
+    "url": "git+https://github.com/andrewflbarnes/ttrl-ui.git"
   },
   "keywords": [
-    "try",
-    "poc",
+    "snowpack",
     "tailwind",
     "tailwindcss",
-    "css"
+    "ttrl",
+    "vue"
   ],
   "author": "andrewflbarnes",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/andrewflbarnes/try-tailwindcss/issues"
+    "url": "https://github.com/andrewflbarnes/ttrl-ui/issues"
   },
-  "homepage": "https://github.com/andrewflbarnes/try-tailwindcss#readme",
+  "homepage": "https://github.com/andrewflbarnes/ttrl-ui#readme",
   "dependencies": {
     "autoprefixer": "^9.8.6",
     "axios": "^0.21.0",

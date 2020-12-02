@@ -11,7 +11,7 @@
         </a>
       </div>
       <div>
-        <a href="https://github.com/andrewflbarnes/try-tailwindcss">
+        <a href="https://github.com/andrewflbarnes/ttrl-ui">
           <i class="fab fa-github" />
           &nbsp;
           <span>Source</span>
