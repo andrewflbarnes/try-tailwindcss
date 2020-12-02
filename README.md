@@ -1,8 +1,8 @@
 # TTRL UI
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/a6caf4da-8161-4229-885a-ea91ce64b593/deploy-status)](https://app.netlify.com/sites/ttrl-ui/deploys)
+[![Netlify Status Badge][1]][2]
 
-[Visit site](https://ttrl-ui.netlify.app)
+[Visit site][3]
 
 Motiviation: Refamiliarisation with web development (in particular
 Vue) and other web technologies.
@@ -51,3 +51,7 @@ The service is deployed as a static site by netlify. There are 2 main
 deployments:
 - prod: https://ttrl-ui.netlify.app
 - staging: https://staging--ttrl-ui.netlify.app
+
+[1]: <https://api.netlify.com/api/v1/badges/a6caf4da-8161-4229-885a-ea91ce64b593/deploy-status> "Netlify status badge"
+[2]: <https://app.netlify.com/sites/ttrl-ui/deploys> "Netlify deployments"
+[3]: <https://ttrl-ui.netlify.app> " TTRL UI site"
